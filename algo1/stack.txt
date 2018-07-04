@@ -1,0 +1,57 @@
+LIFO
+last in first out
+
+clean plate stacker analogy
+- push onto stack - put plate on top
+- newest is top plate
+- stack depth
+- see top plate - peek
+- pop plate - remove top
+
+LL for stack?
+pro
+- no hard size limit (depth)
+- easy to implement
+  - no bounds check
+  - empty list = empty stack
+con
+  - memory allocation on push
+  - per node memory overhead
+  - potential performance issues
+
+array for stack
+- allocate size 4
+- if size equals length
+  - double size
+  - create new array of that size
+  - copy old array into new array
+  - change pointer from old array to new array
+
+postfix algorithm
+5 + 6 * 7 - 1
+becomes
+5 6 7 * + 1 -
+
+foreach token
+  if token is integer
+    push token
+  else if token is operator
+    pop right side value
+    pop left side value
+    evaluate operator
+    push result
+  next
+
+  5 -> 6 -> 7 (encounter multiplication sign)
+  5 -> 42 (encounter plus sign)
+  47 -> 1 (encounter multiplication)
+  46 (result)
+
+  UNDO
+  stack stores changes
+  undo gets values from stack
+
+ Stack<T>
+ Push Peek pop
+ Items stored in array
+  

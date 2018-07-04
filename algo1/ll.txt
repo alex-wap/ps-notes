@@ -1,0 +1,36 @@
+namespace LinkedList
+{
+  public class LinkedList<T> :
+    System.Collections.Generic.ICollection<T>
+  {
+    public LinkedListNode<T> Head
+    {
+      get;
+      private set;
+    }
+
+    public LinkedListNode<T> Tail
+    {
+      get;
+      private set;
+    }
+  }
+}
+
+ICollection
+  Count
+  Add
+  Contains
+  CopyTo
+  IsReadOnly
+  Remove
+  IEnumerator
+  Clear
+
+Remove 
+1. empty LinkedList
+2. single LinkedListNode
+3. many LinkedListNodes
+  a. first value
+  b. middle or last value
+

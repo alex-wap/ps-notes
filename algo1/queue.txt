@@ -1,0 +1,44 @@
+first in first out (FIFO)
+
+grocery check out line analogy
+enqueue
+  - first in is the head
+dequeue
+  - remove head
+peek
+  - look
+
+LL
+- enqueue with add last
+- LL head is Queue head
+- dequeue with remove first
+- addlast/removefirst allow list enumeration to "just worK"
+
+array
+- head is next item to dequeue
+- tail is the last item enqueued
+- what happens when last slot is filled?
+GROWTH
+- allocate new longer array
+- copy items from head to end of array
+- if necessary, wrap and copy from 0 to head-1
+- use new array
+- update head and tail pointers
+
+Array of size zero - why?
+- no null checks later, just length checks
+
+PRIORITY Queue
+- not first in, first out 
+
+analogy - police station call center
+call - noise (low priority but first)
+call - auto (high priority)
+call - theft (med priority)
+call - noise (lower priority after the first noise call)
+
+add before method - add something in the middle
+
+Queue<T>
+enqueue, dequeue
+implemented as array

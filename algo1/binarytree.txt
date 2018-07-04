@@ -1,0 +1,50 @@
+tree analogy - org chart
+
+vice president  
+|           |             |
+team lead   consultant    team lead
+|  |    |                   |     |
+[] []   []                  []    []
+
+each line is a unique chain that leads back to the vice president 
+root - top node (head)
+leaf node - terminal node
+children
+parent
+each node has ONLY ONE parent (tree definition)
+
+binary tree 
+0, 1, or 2 children
+left, right child
+at MOST TWO children 
+
+binary search tree 
+SORTED
+smallest left, biggest right 
+
+add data
+- recursive algo 
+- cases
+  1. empty - becomes root
+  2. smaller - recursively add to left
+  3. larger - recurisvely add to the right 
+  4. equal value? - (treat it as larger)
+
+fast search (duh)
+
+remove 
+- find note to be deleted 
+  - if does not exist, exit 
+- left node 
+  - remove parent's pointer to deleted node 
+- non-leaf node 
+  - find the child to replace the deleted node 
+  - three scenarios
+    - no right child 
+      - left child replaces removed node
+    - removed right child has no left child 
+      - right child replaces removed node 
+    - removed right child has left child 
+      - find right's LEFT most child 
+      - promote to deleted slot 
+      
