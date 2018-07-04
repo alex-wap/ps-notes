@@ -29,3 +29,4 @@ pluralsight notes
 - design patterns
 - cosmos
 - containers
+- bit shifting

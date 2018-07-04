@@ -1,0 +1,71 @@
+associative array
+- storage of key value pairs
+- index any comparable type (not just int)
+- each key unique
+- method GetIndex: takes a string, and returns an int 
+  - method "hashes" the string 
+  - fixed size result from an input 
+  - 32 bit int up to 1000s of digits long 
+  - stable: same input generates same output every time 
+  - uniform: even distribution through available space 
+  - efficient: balance time and space 
+  - secure: cost of finding data that produces a given hash is prohibitive 
+
+implementation
+- naive: sum ASCII value for each char 
+  - stable 
+  - efficient 
+  - NOT UNIFORM, NOT SeCURE 
+- "folds" 4 characters into an int 
+  - 32 bit wraps around if exceeds value 
+  - stable, efficient, mostly uniformity
+  - not secure 
+- don't write your own hashing algos 
+- CRC32 not secure, but great
+- SHA-2 great security
+
+unchecked C# keyword: wrap 32 bit int instead of overflow int (exception)
+
+add items to hash table 
+- length, hashcode -> int index = hashCode % arrayLength;
+
+collisions
+- same hash value for two distinct items 
+- open addressing
+  - move to next index in table 
+  - find index, then iterate through to find item 
+- chaining
+  - store items in a linked list 
+  - find index, then check list 
+
+growing the collection 
+- load/fill factor: ratio of filled slots to empty slots 
+- add item
+  - is our current load factor greater than the threshold we picked?
+  - new array (twice as long), add items to new array via enumeration 
+
+remove items 
+- remove item by key 
+  - open addressing 
+    - get index of key, if match, remove 
+    - if not matching, keep checking next index 
+  - chaining 
+    - get index of key 
+    - remove item from linked list 
+    - use pair class or tuple for key,value pair 
+
+find items 
+- found by key 
+- same as remove 
+
+enumerating keys and values 
+- open addressing: foreach item in array, if not null, return 
+- chaining: foreach list in array, if list not null, foreach item in list, return item 
+- enumerate for both keys and values
+  - if not for values, then you need to make N look ups
+
+hash table
+- key value pairs 
+- update the values 
+- stable key 
+

@@ -47,4 +47,20 @@ remove
     - removed right child has left child 
       - find right's LEFT most child 
       - promote to deleted slot 
-      
+
+traversal
+- pre order (process - left - right)
+- in order (left - process - right)
+- post order (left - right - process)
+
+run time compiler uses pre/post order
+math operations easy with pre/post order 
+
+IEnumerable<T> where T: IComparable<T>
+
+in order traversal (iterative in production, don't use recursive)
+use a stack to store the nodes we've skipped 
+boolean stores whether we should go left or right 
+memory constraint (stack) versus call stack depth (run time)
+
+take input - keep in sorted order (add is cheap)
