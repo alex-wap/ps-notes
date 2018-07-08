@@ -1,0 +1,80 @@
+arrange data in collection based on comparison algorithm
+greater than, less than, equality
+
+two families of sorts
+- linear sorting
+  - treat problem of sorting as single large operation
+- divide and conquer
+  - partition data to be sorted into smaller sets, can be independently sorted 
+
+measure performance
+- comparisons: when two values are compared 
+- swaps: two values stored in the input array are swapped 
+- swap and compare have costs, reducing either can improve performance
+
+bubble
+- each pass
+  - comprae to right neighbor
+  - swap if right is smaller 
+  - repeat for remaining array items 
+- perform subsequent passes until no swaps are performed 
+- performance
+  - worst case: n squared, bad for large unsorted data 
+  - avg case: n squared 
+  - best case: n, very good for best case, can efficiently sort small and nearly sorted datasets 
+- space: o(n), operates directly on input array, which is good for space constraints
+
+insertion
+- sort each item in array as they are encountered 
+- single pass 
+- left to right 
+  - everything left of item is sorted 
+  - everything right of item is unsorted 
+- current item is inserted into place within the sorted section 
+- performance 
+  - worst case: n squared, not good for large data 
+  - avg case: n squared
+  - best case: n, no swaps 
+- space: o(n), small dataset or nearly sorted 
+
+selection
+- find smallest item, swap into the array in the first unsorted location 
+- enumerate the array from the first unsorted item to the end 
+- identify smallest item 
+- swap the smallest item with the first unsorted item 
+- performance
+  - n squared 
+  - avg case, better than bubble, worse than insertion 
+  - best case also n squared
+  - good for cheap comparisons and expensive swaps 
+- space o(n), worse than other two 
+
+merge
+- recurisvely split array in half 
+- when array is in groups of one, it is reconstructed 
+- each reconstructed array is merged with the other half 
+- diamond shape 
+- performance 
+  - n log n: good for large data, data split can make it parallel
+  - best, avg, worst cases same performance 
+- space: o(n), merge can be performed in place, but usually not. using extra array allocations
+- heap and garbage collection 
+- beware of implementation 
+
+quick
+- divide and conquer 
+- pick pivot value and partition the array 
+  - fixed rule or hueristic to pick pivot 
+  - consider the data before choosing 
+- put all values less than the pivot to the left and more to the right 
+  - pivot point is now sorted, everything right is larger, everything left is smaller 
+- perform pivot and partition algo on the left and right partitions 
+- repeat until sorted 
+- performance 
+  - worst case: n squared 
+  - avg: n log n: large data 
+  - best: n log n: great 
+- space: o(n), new stack entries, existing optimizations 
+
+
+

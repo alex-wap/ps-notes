@@ -1,0 +1,34 @@
+sets.txt
+
+collection of objects (comparable)
+
+IEnumerable
+store in List
+
+add
+remove - boolean if success
+
+count aka cardinality
+
+union
+-compare two sets, create third set that contains all unique items
+-(add range, skip dupes)
+-skip instead of throw exception for dupes
+
+intersection
+-compare two sets, return a new set that contains all matching members of both sets 
+
+set difference
+- two input sets, return all items of set A that are not in set B
+- list of math class students who are not in world history
+
+symmetric difference
+- two input sets, return a third set that contains all members of both sets that are not in both 
+- symmetric difference is the set difference of the intersection and union of the input sets 
+- which students are taking math or history, but NOT BOTH
+
+HashSet<T>
+- UnionWith
+- Intersect
+- Except
+- SymmetricExceptWith 

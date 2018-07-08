@@ -1,0 +1,59 @@
+stringsearch.txt
+
+string to find
+string to search
+return IEnumerable 
+
+naive 
+- for loop search string 
+- nested while loop for find string 
+- count match
+- O(n+m)
+- worse case: O(nm)
+
+boyer-moore-horspool 
+- two stage algo 
+- stage 1: preprocess
+    - build a table that contains the left to shift when a bad match occurs 
+    - create a second "good suffix" table 
+- stage 2: search 
+    - compare right to left from beginning 
+    - bad match table used to skip characters when mismatch occurs 
+
+
+bad match table 
+    - algo
+    - store length of search string as default shift length
+    - for each character in search string 
+        - set the shift index for the current character value 
+"TRUTH"
+Index   Value (shift by)
+?       5
+T       1
+R       3
+U       2
+
+WE HOLD THESE TRUTHS TO BE SELF-EVIDENT 
+TRUTH 
+    ^
+    not a match, skip 5
+WE HOLD THESE TRUTHS TO BE SELF-EVIDENT 
+     TRUTH
+        ^^
+        TH matches, but U does not match, skip 5 
+        
+WE HOLD THESE TRUTHS TO BE SELF-EVIDENT 
+           TRUTH
+               ^
+               does not match, skip 3 (U is in the table)
+              
+WE HOLD THESE TRUTHS TO BE SELF-EVIDENT 
+              TRUTH
+              ^^^^^
+              match, exit 
+              
+performance
+- larger the bad match table, more shifting can be done (better)
+- best case: O(n/m)
+- worst case: O(nm)
+- appropriate as a general purpose search algo 

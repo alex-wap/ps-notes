@@ -30,3 +30,5 @@ pluralsight notes
 - cosmos
 - containers
 - bit shifting
+- concurrency
+- race conditions 
